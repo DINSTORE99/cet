@@ -1,0 +1,17 @@
+{
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.9.0"
+    }
+  },
+  "routes": [
+    { "src": "/admin", "dest": "/api/admin.php" },
+    { "src": "/admin/transactions", "dest": "/api/admin_transactions.php" },
+    { "src": "/admin/topups", "dest": "/api/admin_topups.php" },
+    { "src": "/admin/servers", "dest": "/api/admin_servers.php" },
+    { "src": "/admin/settings", "dest": "/api/admin_settings.php" },
+    { "src": "/logout", "dest": "/api/logout.php" },
+    { "src": "/(.*)", "dest": "/api/index.php" }
+  ]
+}
+
