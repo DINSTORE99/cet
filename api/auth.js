@@ -11,14 +11,12 @@ export default function handler(req, res) {
   if (req.method === 'POST') {
     const { action, data } = req.body;
     
-    // Simulasi pemrosesan backend tanpa database permanen
-    if (action === 'update_balance') {
-      return res.status(200).json({ success: true, message: 'Saldo berhasil diperbarui di serverless session' });
+    if (action === 'sync_user') {
+      return res.status(200).json({ success: true, message: 'User disinkronkan di serverless session', data });
     }
     
-    return res.status(200).json({ success: true, message: 'Request diterima', data });
+    return res.status(200).json({ success: true, message: 'Request berhasil diproses', data });
   }
 
   res.status(405).json({ error: 'Method not allowed' });
 }
-
